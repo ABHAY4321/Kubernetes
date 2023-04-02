@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firstpod
+  labels:
+    env: prod
+    env1: test
+spec:
+  containers:
+    - name: abhay
+      image: abhay10371/nginx-custom
+      env:
+        - name: myname
+          value: Abhay
+        - name: city
+          value: Gaya
+      args: ["sleep", "3600"]
+    - name: kumar
+      image: abhay10371/nginx-custom
+  initContainers:
+    - name: pinku
+      image: abhay10371/nginx-custom
+      env:
+        - name: myname
+          value: Pinku
+        - name: city
+          value: Patna
+      args: ["sleep", "30"]     
+    - name: vishal
+      image: abhay10371/nginx-custom
+      env:
+        - name: myname
+          value: Vishal
+        - name: city
+          value: Nalanda
+      args: ["sleep", "30"]        

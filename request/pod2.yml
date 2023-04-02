@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  namespace: cricbuzz
+  labels:
+    app: myapp1
+    type: frontend
+spec:
+  containers:
+    - name: kumar
+      image: abhay10371/nginx-custom:v2
+      resources:
+        requests:
+          memory: 100Mi
+          cpu: 100m
+        limits:
+          memory: 200Mi
+          cpu: 200m      
+

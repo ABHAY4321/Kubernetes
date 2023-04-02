@@ -1,0 +1,15 @@
+## Get all varaiables of configmap in pod  ##
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  labels:
+    app: myapp1
+    type: frontend
+spec:
+  containers:
+    - name: kumar
+      image: abhay10371/nginx-custom
+      envFrom:
+         - configMapRef:
+             name: envcm

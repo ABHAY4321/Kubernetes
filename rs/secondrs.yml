@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: first-rs
+  labels: 
+    name: first-rs     
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - myapp1
+          - myapp2  
+  template:
+    metadata:
+      name: firstpod
+      labels:
+        app: myapp1
+    spec:
+      containers:
+        - name: abhay
+          image: abhay10371/nginx-custom

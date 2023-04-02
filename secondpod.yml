@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secondpod
+  labels:
+    env: prod
+    env1: test
+spec:
+  containers:
+    - name: kumar
+      image: abhay10371/nginx-custom

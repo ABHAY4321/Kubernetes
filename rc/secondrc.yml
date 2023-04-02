@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: second-rc
+  labels: 
+    appname: cricbuzz
+spec:
+  replicas: 1
+  selector:
+    type: app
+  template:
+    metadata:
+      name: firstpod1
+      labels:
+        type: app
+    spec:
+      containers:
+        - name: abhay
+          image: abhay10371/nginx-custom

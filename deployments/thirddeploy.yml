@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+  labels: 
+    name: first-deployment     
+spec:
+  replicas: 5
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 0     
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: myapp  
+  template:
+    metadata:
+      name: pod
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: abhay
+          image: abhay10371/nginx-custom:v2

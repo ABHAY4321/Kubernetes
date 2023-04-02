@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+  labels: 
+    name: first-deployment
+  annotations:
+    kubernetes.io/change-cause: "Final Deployment"                    
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: myapp  
+  template:
+    metadata:
+      name: pod
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: abhay
+          image: nginx

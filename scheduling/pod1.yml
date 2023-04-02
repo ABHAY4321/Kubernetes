@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod5
+  labels:
+    app: myapp1
+    type: frontend
+spec:
+  containers:
+    - name: kumar
+      image: abhay10371/nginx-custom
+      imagePullPolicy: Never
+  nodeSelector:
+    size: "small"

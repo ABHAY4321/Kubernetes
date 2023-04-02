@@ -1,0 +1,22 @@
+apiVersion: v1
+data:
+  application.properties: |+
+    # Database Details
+
+    database_ip="10.210.15.63"
+    database_username="abhay"
+    database_password="Tommy@4321"
+
+  localadmin.properties: |
+    # Local Admin Details
+
+    username=abhay
+    password=yahba
+  superadmin.properties: |
+    # Super Admin Details
+
+    username=root
+    password=toor
+kind: ConfigMap
+metadata:
+  name: cmfromfiles

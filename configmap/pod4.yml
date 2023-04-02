@@ -1,0 +1,26 @@
+## Inject ConfigMap (Selected Variables) as Files in Pod ##
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  labels:
+    app: myapp1
+    type: frontend
+spec:
+  containers:
+    - name: kumar
+      image: abhay10371/nginx-custom
+      imagePullPolicy: Never
+      volumeMounts:
+          - name: test
+            mountPath: "/config"
+            readOnly: true
+  volumes:
+    - name: test
+      configMap:
+          name: envcm
+          items: 
+             - key: variable1
+               path: "variable1here"
+             - key: variable3
+               path: "variable3here"
